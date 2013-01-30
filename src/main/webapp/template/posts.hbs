@@ -1,0 +1,15 @@
+<ul>
+    {{#each collection}}
+            <li>{{body}}</li>
+            <li>{{author}}</li>
+            <li>{{title}}</li>
+            <li>{{tags}}</li>
+            <ul>
+            {{#each comments}}
+            	<li>{{body}}</li>
+            	<li>{{email}}</li>
+            	<li>{{author}}</li>
+            {{/each}}
+            </ul>
+    {{/each}}
+</ul>

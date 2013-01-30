@@ -32,7 +32,7 @@ public class PostInitializer {
     	HashSet<String> tags = new HashSet<String>();
     	tags.add("newpost");
     	
-        sampleRepository.save(new Post("Blabla", "test", "me", tags, comments));
+        sampleRepository.save(new Post("Blabla", "test", "me", "Test Post", tags, comments));
         
     }
 }

@@ -25,11 +25,12 @@ public class Post {
 		super();
 	}
 	
-	public Post(String body, String permalink, String author, Set<String> tags, List<Comment> comments) {
+	public Post(String body, String permalink, String author, String title, Set<String> tags, List<Comment> comments) {
 		super();
 		this.body = body;
 		this.permalink = permalink;
 		this.author = author;
+		this.title = title;
 		this.tags = tags;
 		this.comments = comments;
 	}
