@@ -1,15 +1,18 @@
+{{#each collection}}
+<div class="well">
 <ul>
-    {{#each collection}}
-            <li>{{body}}</li>
-            <li>{{author}}</li>
-            <li>{{title}}</li>
-            <li>{{tags}}</li>
-            <ul>
-            {{#each comments}}
-            	<li>{{body}}</li>
-            	<li>{{email}}</li>
-            	<li>{{author}}</li>
-            {{/each}}
-            </ul>
-    {{/each}}
+        <li>{{body}}</li>
+        <li>{{author}}</li>
+        <li>{{title}}</li>
+        <li>{{tags}}</li>
+        <ul>
+        {{#each comments}}
+        	<li>{{body}}</li>
+        	<li>{{email}}</li>
+        	<li>{{author}}</li>
+        {{/each}}
+        </ul>
 </ul>
+<button class="btn btn-success" type="button">Post</button>
+</div>
+{{/each}}
