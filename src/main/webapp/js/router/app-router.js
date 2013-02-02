@@ -1,4 +1,4 @@
-define(['backbone', 'view/about-view', 'view/samples-view', 'view/tasks-view', 'view/posts-view'], function (Backbone, AboutView, SamplesView, TasksView, PostsView) {
+define(['backbone', 'view/about-view', 'view/posts-view'], function (Backbone, AboutView, PostsView) {
     var AppRouter = Backbone.Router.extend({
 
         initialize: function() {
@@ -16,12 +16,6 @@ define(['backbone', 'view/about-view', 'view/samples-view', 'view/tasks-view', '
         },
         about:function () {
             new AboutView({root:$('#main')});
-        },
-        tasks:function () {
-        	new TasksView({root:$('#main')});
-        },
-        posts:function () {
-        	new PostsView({root:$('#main')});
         }
         
     });
