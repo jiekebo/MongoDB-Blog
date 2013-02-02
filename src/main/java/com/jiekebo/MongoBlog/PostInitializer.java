@@ -1,6 +1,7 @@
 package com.jiekebo.MongoBlog;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 
@@ -32,7 +33,9 @@ public class PostInitializer {
     	HashSet<String> tags = new HashSet<String>();
     	tags.add("newpost");
     	
-        sampleRepository.save(new Post("Blabla", "test", "me", "Test Post", tags, comments));
+    	Date date = new Date(System.currentTimeMillis());
+    	
+        sampleRepository.save(new Post("Blabla", "test", "me", "Test Post", date, tags, comments));
         
     }
 }

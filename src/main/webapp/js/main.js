@@ -81,7 +81,8 @@ require.config({
         hbs: 'lib/resthub/require-handlebars',
         moment: 'lib/moment',
         template: '../template',
-        console: 'lib/resthub/console'
+        console: 'lib/resthub/console',
+        dateformat: 'lib/date.format',
     }
 });
 

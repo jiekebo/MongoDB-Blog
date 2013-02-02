@@ -1,5 +1,6 @@
 package com.jiekebo.MongoBlog.model;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -16,6 +17,7 @@ public class Post {
 	private String permalink;
 	private String author;
 	private String title;
+	private Date date;
 	
 	private Set<String> tags;
 	
@@ -25,12 +27,13 @@ public class Post {
 		super();
 	}
 	
-	public Post(String body, String permalink, String author, String title, Set<String> tags, List<Comment> comments) {
+	public Post(String body, String permalink, String author, String title, Date date, Set<String> tags, List<Comment> comments) {
 		super();
 		this.body = body;
 		this.permalink = permalink;
 		this.author = author;
 		this.title = title;
+		this.date = date;
 		this.tags = tags;
 		this.comments = comments;
 	}
@@ -89,6 +92,14 @@ public class Post {
 
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
+	}
+	
+	public Date getDate() {
+		return date;
+	}
+	
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 }
