@@ -1,4 +1,4 @@
-define(['backbone', 'view/about-view', 'view/posts-view'], function (Backbone, AboutView, PostsView) {
+define(['backbone', 'view/posts-view', 'view/newpost-view'], function (Backbone, PostsView, NewPostView) {
     var AppRouter = Backbone.Router.extend({
 
         initialize: function() {
@@ -8,14 +8,14 @@ define(['backbone', 'view/about-view', 'view/posts-view'], function (Backbone, A
         routes:{
             '':'home',
             'home':'home',
-            'about':'about'
+            'newpost':'newpost'
         },
 
         home:function () {
             new PostsView({root:$('#main')});
         },
-        about:function () {
-            new AboutView({root:$('#main')});
+        newpost:function () {
+        	new NewPostView({root:$('#main')});
         }
         
     });

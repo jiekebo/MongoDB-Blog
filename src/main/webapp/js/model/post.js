@@ -1,4 +1,4 @@
-define([ 'underscore', 'backbone', 'dateformat' ], function(_, Backbone) {
+define([ 'underscore', 'backbone', /*'dateformat'*/ ], function(_, Backbone) {
 
 	var PostModel = Backbone.Model.extend({
 
@@ -7,11 +7,11 @@ define([ 'underscore', 'backbone', 'dateformat' ], function(_, Backbone) {
 		},
 
 		initialize : function() {
-			var isodate = this.get('date');
-			var date = new Date(isodate);
-			this.set({
-				'date' : date.format("dddd, mmmm dS, yyyy, h:MM:ss TT")
-			});
+//			var isodate = this.get('date');
+//			var date = new Date(isodate);
+//			this.set({
+//				'date' : date.format("dddd, mmmm dS, yyyy, h:MM:ss TT")
+//			});
 		}
 
 	});
