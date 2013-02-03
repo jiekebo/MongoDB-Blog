@@ -82,7 +82,6 @@ require.config({
         moment: 'lib/moment',
         template: '../template',
         console: 'lib/resthub/console',
-//        dateformat: 'lib/date.format',
     }
 });
 
