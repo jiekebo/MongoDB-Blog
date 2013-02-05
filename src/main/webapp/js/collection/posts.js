@@ -4,7 +4,12 @@ define(['backbone', 'model/post'], function (Backbone, Post) {
 
         // Reference to this collection's model.
         model: Post,
-        url:'api/post'
+        
+        url:'api/post',
+        
+        comparator: function(model) {
+        	return -model.get('date');
+        }
 
     });
     return Posts;
