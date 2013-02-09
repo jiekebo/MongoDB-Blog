@@ -1,4 +1,4 @@
-define(['backbone', 'view/posts-view', 'view/newpost-view'], function (Backbone, PostsView, NewPostView) {
+define(['backbone', 'bootstrap', 'view/posts-view'], function (Backbone, Bootstrap, PostsView) {
     var AppRouter = Backbone.Router.extend({
 
         initialize: function() {
@@ -7,15 +7,11 @@ define(['backbone', 'view/posts-view', 'view/newpost-view'], function (Backbone,
 
         routes:{
             '':'home',
-            'home':'home',
-            'newpost':'newpost'
+            'home':'home'
         },
 
         home:function () {
             new PostsView({root:$('#main')});
-        },
-        newpost:function () {
-        	new NewPostView({root:$('#main')});
         }
         
     });

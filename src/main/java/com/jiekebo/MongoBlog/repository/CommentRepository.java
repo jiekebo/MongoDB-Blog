@@ -1,5 +1,9 @@
 package com.jiekebo.MongoBlog.repository;
 
-public class CommentRepository {
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.jiekebo.MongoBlog.model.Comment;
+
+public interface CommentRepository extends MongoRepository<Comment, String> {
 
 }
