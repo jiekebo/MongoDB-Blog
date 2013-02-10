@@ -1,9 +1,12 @@
-define([ 'underscore', 'backbone', 'moment' ], function(_, Backbone, Moment) {
+define([ 'underscore', 'backbone' ], function(_, Backbone) {
 
 	var PostModel = Backbone.Model.extend({
 
 		defaults : {
-			title : "empty name"
+			title : "Default Title",
+			author : "Default User",
+			date : "0",
+			tags : "New Tag"
 		}
 
 	});

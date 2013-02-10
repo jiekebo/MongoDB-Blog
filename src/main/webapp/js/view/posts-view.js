@@ -10,7 +10,7 @@ function (Backbone, Resthub, Bootstrap, Posts, postsTemplate) {
 
         initialize:function () {
             // Initialize the collection
-            this.collection = new Posts();
+            this.collection = new Posts( );
             
             // Render the view when the collection is retreived from the server
             this.collection.on('reset', this.render, this);
@@ -25,7 +25,6 @@ function (Backbone, Resthub, Bootstrap, Posts, postsTemplate) {
         	var date = new Date();
         	var time = date.getTime().toString();
         	return {
-        		author: "Testuser",
         		title: this.$('#title').val(),
         		body: this.$('#body').val(),
         		tags: ["newpost", "also newpost"],

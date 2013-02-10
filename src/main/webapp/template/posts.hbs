@@ -1,5 +1,5 @@
 <!-- Button to trigger modal -->
-<a href="#myModal" role="button" class="btn btn-success" data-toggle="modal">Add post</a>
+<a href="#postModal" role="button" class="btn btn-success" data-toggle="modal">Add post</a>
 <br/><br/>
 {{#each collection}}
 <div class="hero-unit">
@@ -11,6 +11,8 @@
 		<span class="label label-info">{{this}}</span>
 	{{/each}}
 	<br/><br/>
+	<a href="#commentModal" role="button" class="btn btn-success" data-toggle="modal">Add comment</a>
+	<br/>
 	{{#if comments}}
 		<h4>Comments</h4>
 	{{/if}}
@@ -24,7 +26,7 @@
 {{/each}}
 
 <!-- Modal -->
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog"
+<div id="postModal" class="modal hide fade" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal"
@@ -45,5 +47,32 @@
 	<div class="modal-footer">
 		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
 		<button class="btn btn-primary" id="newpost" data-dismiss="modal" aria-hidden="true">Save changes</button>
+	</div>
+</div>
+
+<!-- Modal -->
+<div id="commentModal" class="modal hide fade" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal"
+			aria-hidden="true">×</button>
+		<h3 id="myModalLabel">Add post</h3>
+	</div>
+	<div class="modal-body">
+		<form>
+			<fieldset>
+				<label>Name</label>
+				<input type="text" placeholder="Type your name..." id="name" />
+				<label>E-Mail</label>
+				<input type="text" placeholder="Type your e-mail..." id="email" />
+				<label>Text</label>
+				<textarea rows="5" class="field span5" id="body"></textarea>
+				<br />
+			</fieldset>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		<button class="btn btn-primary" id="newcomment" data-dismiss="modal" aria-hidden="true">Save changes</button>
 	</div>
 </div>
