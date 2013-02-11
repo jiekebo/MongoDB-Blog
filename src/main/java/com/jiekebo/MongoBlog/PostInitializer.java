@@ -24,18 +24,19 @@ public class PostInitializer {
     @PostInitialize
     public void init() {
     	Comment comment = new Comment();
-    	comment.setAuthor("me");
-    	comment.setBody("blabla");
-    	comment.setEmail("me@me.com");
+    	comment.setAuthor("John Doe");
+    	comment.setBody("Testing ebedded documents");
+    	comment.setEmail("johndoe@mail.com");
     	List<Comment> comments = new ArrayList<Comment>();
     	comments.add(comment);
     	
     	HashSet<String> tags = new HashSet<String>();
     	tags.add("newpost");
+    	tags.add("test");
     	
     	Date date = new Date(System.currentTimeMillis());
     	
-        sampleRepository.save(new Post("Blabla", "test", "me", "Test Post", date, tags, comments));
+        sampleRepository.save(new Post("Test posting", "test", "John Doe", "Test Post", date, tags, comments));
         
     }
 }
