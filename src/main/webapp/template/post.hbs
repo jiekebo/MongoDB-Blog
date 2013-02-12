@@ -1,0 +1,48 @@
+<div class="hero-unit">
+	<h2>{{model.title}}</h2>
+	<p>{{model.author}} - {{formatDate model.date "MMMM Do YYYY, h:mm:ss a"}}</p>
+	{{model.body}}
+	<br/><br/>
+	{{#each model.tags}}
+		<span class="label label-info">{{this}}</span>
+	{{/each}}
+	<br/><br/>
+	<a href="#commentModal" role="button" class="btn btn-success" data-toggle="modal">Add comment</a>
+	<br/>
+	{{#if model.comments}}
+		<h4>Comments</h4>
+	{{/if}}
+	{{#each model.comments}}
+		<div class="well">
+			<p>{{author}} - {{email}}</p>	
+			{{body}}
+		</div>
+	{{/each}}
+</div>
+
+<!-- Modal -->
+<div id="commentModal" class="modal hide fade" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal"
+			aria-hidden="true">×</button>
+		<h3 id="myModalLabel">Add comment</h3>
+	</div>
+	<div class="modal-body">
+		<form>
+			<fieldset>
+				<label>Name</label>
+				<input type="text" placeholder="Type post title..." id="commentname" />
+				<label>E-Mail</label>
+				<input type="text" placeholder="Type post title..." id="commentemail" />
+				<label>Text</label>
+				<textarea rows="5" class="field span5" id="commentbody"></textarea>
+				<br />
+			</fieldset>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		<button class="btn btn-primary" id="newcomment" data-dismiss="modal" aria-hidden="true">Save changes</button>
+	</div>
+</div>

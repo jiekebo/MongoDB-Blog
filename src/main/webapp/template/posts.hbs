@@ -1,27 +1,10 @@
 <!-- Button to trigger modal -->
 <a href="#postModal" role="button" class="btn btn-success" data-toggle="modal">Add post</a>
 <br/><br/>
-{{#each collection}}
-<div class="hero-unit">
-	<h2>{{title}}</h2>
-	<p>{{author}} - {{formatDate date "MMMM Do YYYY, h:mm:ss a"}}</p>
-	{{body}}
-	<br/><br/>
-	{{#each tags}}
-		<span class="label label-info">{{this}}</span>
-	{{/each}}
-	<br/><br/>
-	{{#if comments}}
-		<h4>Comments</h4>
-	{{/if}}
-	{{#each comments}}
-		<div class="well">
-			<p>{{author}} - {{email}}</p>	
-			{{body}}
-		</div>
-	{{/each}}
-</div>
-{{/each}}
+
+
+<div id="post-list"></div>
+
 
 <!-- Modal -->
 <div id="postModal" class="modal hide fade" tabindex="-1" role="dialog"
@@ -35,9 +18,9 @@
 		<form>
 			<fieldset>
 				<label>Title</label>
-				<input type="text" placeholder="Type post title..." id="title" />
+				<input type="text" placeholder="Type post title..." id="posttitle" />
 				<label>Text</label>
-				<textarea rows="5" class="field span5" id="body"></textarea>
+				<textarea rows="5" class="field span5" id="postbody"></textarea>
 				<br />
 			</fieldset>
 		</form>

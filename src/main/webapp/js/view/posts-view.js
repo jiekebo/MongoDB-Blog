@@ -1,5 +1,5 @@
-define([ 'backbone', 'resthub', 'bootstrap', 'collection/posts', 'hbs!template/posts' ],
-function (Backbone, Resthub, Bootstrap, Posts, postsTemplate) {
+define([ 'backbone', 'resthub', 'bootstrap', 'hbs!template/posts', 'collection/posts', 'view/post-view' ],
+function (Backbone, Resthub, Bootstrap, postsTemplate, Posts, PostView) {
     
     var PostsView = Resthub.View.extend({
         
@@ -8,25 +8,34 @@ function (Backbone, Resthub, Bootstrap, Posts, postsTemplate) {
         
         events: {"click #newpost" : 'createOnPost'},
 
-        initialize:function () {
+        initialize:function () {        	
             // Initialize the collection
             this.collection = new Posts( );
             
-            // Render the view when the collection is retreived from the server
-            this.collection.on('reset', this.render, this);
+            this.collection.on('add', this.addOne, this);
+            this.collection.on('reset', this.addAll, this);
+            this.collection.on('change', this.render(), this);
+            
+            this.render();
             
             // Request unpaginated URL
-            this.collection.fetch({ data: { page: 'no'} });
-            
-            this.collection.on('change', this.render, this);
+            this.collection.fetch({ data: { page: 'no'} });            
+        },
+        
+        addOne: function(todo) {
+        	new PostView({root: $('#post-list'), model: todo});
+        },
+        
+        addAll: function() {
+        	this.collection.each(this.addOne);
         },
         
         getPostData: function () {
         	var date = new Date();
         	var time = date.getTime().toString();
         	return {
-        		title: this.$('#title').val(),
-        		body: this.$('#body').val(),
+        		title: this.$('#posttitle').val(),
+        		body: this.$('#postbody').val(),
         		tags: ["newpost", "also newpost"],
         		permalink: "test",
         		date: time,
